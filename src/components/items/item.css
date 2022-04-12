@@ -1,0 +1,26 @@
+.product-view-wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.product-view-go-list-btn {
+  border: 0;
+  padding: 10px;
+  background-color: #ffd9d9;
+}
+
+.product-view-row {
+  margin: 10px 0;
+  display: flex;
+}
+
+.product-view-row > label:first-child {
+  margin: 10px 0;
+  width: 30%;
+  font-weight: bold;
+}
+
+.product-view-row > *:nth-child(2) {
+  margin: 10px 0;
+  width: 70%;
+}
