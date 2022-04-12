@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemList from "./ItemList";
 import "./Form.css";
 
@@ -10,7 +10,19 @@ interface Iprops {
   onCreate: Function;
 }
 
+interface Iinput {
+  itemName: string;
+  id: string;
+  price: number;
+}
+
 function ItemMain({ itemName, id, price, onCreate }: Iprops) {
+  const [input, setInput] = useState<Iinput>({
+    itemName: "",
+    id: "",
+    price: 0,
+  });
+
   return (
     <div className="form">
       <label className="title" htmlFor="item-name">
