@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import ItemData from "./ItemData";
 import Idata from "./ItemData";
 import "./item.css";
-import getItemkey from "./ItemData";
+import { getItemkey } from "./ItemData";
 import ItemDataModel from "./ItemModel";
 
 function ItemView() {
@@ -11,7 +11,7 @@ function ItemView() {
     new ItemDataModel("첫번째 아이디", "첫번째 아이템", 10000)
   );
 
-  let { key: number } = useParams();
+  let key = Idata["keys"];
   let navigate = useNavigate();
 
   useEffect(() => {

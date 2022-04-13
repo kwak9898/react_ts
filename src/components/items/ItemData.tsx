@@ -37,4 +37,7 @@ const getItemkey = (key: Idata["key"]) => {
   }
 };
 
-export default ItemData;
+export default {
+  ItemData,
+  getItemkey,
+};
