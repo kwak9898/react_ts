@@ -16,7 +16,7 @@ interface Istate {
   price: number;
 }
 
-function ProductList(props: Iprops) {
+function ItemList(props: Iprops) {
   const [dataList, setDataList] = useState<Istate>({
     key: 1,
     id: "첫번째 아이디",
@@ -31,4 +31,4 @@ function ProductList(props: Iprops) {
   return;
 }
 
-export default ProductList;
+export default ItemList;
