@@ -1,20 +1,15 @@
 import React from "react";
 import "./CommonTable.css";
 
-interface Itable {
+function CommonTable(props: {
   headerList: string[];
-  children: string;
-}
-
-function CommonTable({
-  headerList = ["상품명", "상품아이디"],
-  children,
-}: Itable) {
+  children: JSX.Element | JSX.Element[];
+}) {
   return (
     <table className="common-table">
       <thead>
         <tr>
-          {headerList.map((item: string, index: number) => {
+          {props.headerList.map((item: string, index: number) => {
             return (
               <td className="common-table-header-column" key={index}>
                 {item}
@@ -23,7 +18,7 @@ function CommonTable({
           })}
         </tr>
       </thead>
-      <tbody>{children}</tbody>
+      <tbody>{props.children}</tbody>
     </table>
   );
 }

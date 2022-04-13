@@ -13,13 +13,6 @@ interface Iprops {
   price: number;
 }
 
-// interface Istate {
-//   key: number;
-//   id: string;
-//   itemName: string;
-//   price: number;
-// }
-
 function ItemList(props: { itemList: ItemDataModel[] }) {
   const [dataList, setDataList] = useState<ItemDataModel>(
     new ItemDataModel("첫번째 아이디", "첫번째 아이템", 10000)
@@ -30,21 +23,19 @@ function ItemList(props: { itemList: ItemDataModel[] }) {
   }, [dataList]);
 
   return (
-    <CommonTable headersName={["제품번호", "제품명", "제품아이디", "가격"]}>
-      {props.productData
-        ? props.productData.map((item, key) => {
-            return (
-              <CommonTableRow key={no}>
-                <CommonTableColumn>{item.no}</CommonTableColumn>
-                <CommonTableColumn>
-                  <Link to={`/item/${item.no}`}>{item.productName}</Link>
-                </CommonTableColumn>
-                <CommonTableColumn>{item.id}</CommonTableColumn>
-                <CommonTableColumn>{item.price}</CommonTableColumn>
-              </CommonTableRow>
-            );
-          })
-        : ""}
+    <CommonTable headerList={["제품번호", "제품명", "제품아이디", "가격"]}>
+      {props.itemList.map((item, key) => {
+        return (
+          <CommonTableRow key={1}>
+            <CommonTableColumn key={item.key} />
+            <CommonTableColumn>
+              <Link to={`/item/${item.key}`}>{item.itemName}</Link>
+            </CommonTableColumn>
+            <CommonTableColumn>{item.id}</CommonTableColumn>
+            <CommonTableColumn>{item.price}</CommonTableColumn>
+          </CommonTableRow>
+        );
+      })}
     </CommonTable>
   );
 }
