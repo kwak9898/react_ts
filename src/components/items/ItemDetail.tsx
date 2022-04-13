@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import ItemData from "./ItemData";
 import "./item.css";
 
 function ItemView() {
