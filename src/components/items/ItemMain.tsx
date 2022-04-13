@@ -6,6 +6,7 @@ import ItemDataModel from "./ItemModel";
 import { setDefaultResultOrder } from "dns";
 import { atom, useRecoilState } from "recoil";
 import { itemListState } from "./itemListState";
+import ItemEdit from "./ItemEdit";
 
 interface IitemInput {
   id: string;
@@ -45,7 +46,7 @@ function ItemMain() {
         </label>
         <input
           type="text"
-          name="productName"
+          name="itemName"
           id="product-name"
           value={itemName}
           onChange={onChange}
