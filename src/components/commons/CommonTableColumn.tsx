@@ -1,6 +1,5 @@
 function CommonTableColumn(props: {
-  key: number;
-  children?: JSX.Element | JSX.Element[];
+  children: JSX.Element | JSX.Element[] | string;
 }) {
   return <td className="common-table-column">{props.children}</td>;
 }

@@ -6,13 +6,6 @@ import CommonTableRow from "../commons/CommonTableRow";
 import ItemData from "./ItemData";
 import ItemDataModel from "./ItemModel";
 
-interface Iprops {
-  key: number;
-  id: string;
-  itemName: string;
-  price: number;
-}
-
 function ItemList(props: { itemList: ItemDataModel[] }) {
   const [dataList, setDataList] = useState<ItemDataModel>(
     new ItemDataModel("첫번째 아이디", "첫번째 아이템", 10000)
@@ -27,12 +20,12 @@ function ItemList(props: { itemList: ItemDataModel[] }) {
       {props.itemList.map((item, key) => {
         return (
           <CommonTableRow key={1}>
-            <CommonTableColumn key={item.key} />
+            <CommonTableColumn>{String(item.key)}</CommonTableColumn>
             <CommonTableColumn>
               <Link to={`/item/${item.key}`}>{item.itemName}</Link>
             </CommonTableColumn>
             <CommonTableColumn>{item.id}</CommonTableColumn>
-            <CommonTableColumn>{item.price}</CommonTableColumn>
+            <CommonTableColumn>{String(item.price)}</CommonTableColumn>
           </CommonTableRow>
         );
       })}
