@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ItemData from "./ItemData";
-import Idata from "./ItemData";
 import "./item.css";
-import { getItemkey } from "./ItemData";
 import ItemDataModel from "./ItemModel";
 
 function ItemView() {
@@ -11,11 +9,16 @@ function ItemView() {
     new ItemDataModel("첫번째 아이디", "첫번째 아이템", 10000)
   );
 
-  let key = Idata["keys"];
+  let { key } = useParams();
   let navigate = useNavigate();
 
+  if (!key) {
+    navigate(-1);
+    return;
+  }
+
   useEffect(() => {
-    setData(getItemkey(key));
+    setData(getItemkey(key!));
   }, [key]);
 
   return (
@@ -56,3 +59,6 @@ function ItemView() {
 }
 
 export default ItemView;
+function getItemkey(key: {}): React.SetStateAction<ItemDataModel> {
+  throw new Error("Function not implemented.");
+}
