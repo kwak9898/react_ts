@@ -6,16 +6,12 @@ import "./item.css";
 import getItemkey from "./ItemData";
 import ItemDataModel from "./ItemModel";
 
-interface Ikey {
-  key: number;
-}
-
 function ItemView() {
   const [data, setData] = useState<ItemDataModel>(
     new ItemDataModel("첫번째 아이디", "첫번째 아이템", 10000)
   );
 
-  let { key }: Ikey = useParams();
+  let { key: number } = useParams();
   let navigate = useNavigate();
 
   useEffect(() => {
