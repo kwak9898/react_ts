@@ -28,10 +28,8 @@ function ItemMain() {
     }));
   };
 
-  let item1 = new ItemDataModel("첫번째 아이디", "첫번째 아이템", 10000);
-
   const [data, setData] = useState<ItemDataModel[]>([
-    item1,
+    new ItemDataModel("첫번째 아이디", "첫번째 아이템", 10000),
     new ItemDataModel("두번째 아이디", "두번째 아이템", 20000),
     new ItemDataModel("세번째 아이디", "세번째 아이템", 30000),
   ]);
