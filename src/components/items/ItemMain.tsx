@@ -1,9 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ItemList from "./ItemList";
 import * as ItemData from "./ItemData";
 import "./Form.css";
 import ItemDataModel from "./ItemModel";
 import { setDefaultResultOrder } from "dns";
+import { atom, useRecoilState } from "recoil";
+import { itemListState } from "./itemListState";
 
 interface IitemInput {
   id: string;
@@ -12,6 +14,7 @@ interface IitemInput {
 }
 
 function ItemMain() {
+  const [itemList, setItemList] = useRecoilState(itemListState);
   const [input, setInput] = useState<IitemInput>({
     itemName: "",
     id: "",
@@ -28,22 +31,14 @@ function ItemMain() {
     }));
   };
 
-  const [data, setData] = useState<ItemDataModel[]>([
-    new ItemDataModel("첫번째 아이디", "첫번째 아이템", 10000),
-    new ItemDataModel("두번째 아이디", "두번째 아이템", 20000),
-    new ItemDataModel("세번째 아이디", "세번째 아이템", 30000),
-  ]);
-
   const onCreate = () => {
     let item = new ItemDataModel(id, itemName, price);
-    setData(prev => {
-      return [...prev, item];
-    });
+    setItemList(prev => [...prev, item]);
   };
 
   return (
     <>
-      <ItemList itemList={data} />
+      <ItemList itemList={itemList} />
       <div className="form">
         <label className="title" htmlFor="product-name">
           제품명
