@@ -6,12 +6,6 @@ import CommonTableRow from "../commons/CommonTableRow";
 import ItemDataModel from "./ItemModel";
 
 function ItemList(props: { itemList: ItemDataModel[] }) {
-  const [dataEdit, setDataEdit] = useState<ItemDataModel>({
-    id: "",
-    itemName: "",
-    price: 0,
-  });
-
   return (
     <CommonTable headerList={["제품아이디", "제품명", "가격"]}>
       {props.itemList.map((item, key) => {
@@ -23,7 +17,7 @@ function ItemList(props: { itemList: ItemDataModel[] }) {
             </CommonTableColumn>
             <CommonTableColumn>{String(item.price)}</CommonTableColumn>
             <CommonTableColumn>
-              <Link to={`/item/${item.id}/edit`}>수정</Link>
+              <Link to={`/item/${item.id}/edit`}>{item.itemName}</Link>
             </CommonTableColumn>
           </CommonTableRow>
         );
