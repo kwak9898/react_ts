@@ -36,16 +36,16 @@ function ItemEdit() {
         {item ? (
           <>
             <div className="product-view-row">
-              <label>제품</label>
+              <label>제품 아이디</label>
+              <input name="id" value={item.id} onChange={onChange} />
+            </div>
+            <div className="product-view-row">
+              <label>제품명</label>
               <input
                 name="itemName"
                 value={item.itemName}
                 onChange={onChange}
               />
-            </div>
-            <div className="product-view-row">
-              <label>제품 아이디</label>
-              <input name="id" value={item.id} onChange={onChange} />
             </div>
             <div className="product-view-row">
               <label>가격</label>

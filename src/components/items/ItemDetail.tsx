@@ -18,12 +18,12 @@ function ItemDetail(): JSX.Element {
         {item ? (
           <>
             <div className="product-view-row">
-              <label>제품</label>
-              <label>{item.itemName}</label>
-            </div>
-            <div className="product-view-row">
               <label>제품 아이디</label>
               <label>{item.id}</label>
+            </div>
+            <div className="product-view-row">
+              <label>제품명</label>
+              <label>{item.itemName}</label>
             </div>
             <div className="product-view-row">
               <label>가격</label>
