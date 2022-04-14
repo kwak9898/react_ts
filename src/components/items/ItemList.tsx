@@ -17,7 +17,7 @@ function ItemList(props: { itemList: ItemDataModel[] }) {
             </CommonTableColumn>
             <CommonTableColumn>{String(item.price)}</CommonTableColumn>
             <CommonTableColumn>
-              <Link to={`/item/${item.id}/edit`}>{item.itemName}</Link>
+              <Link to={`/item/${item.id}/edit`}>수정</Link>
             </CommonTableColumn>
           </CommonTableRow>
         );
