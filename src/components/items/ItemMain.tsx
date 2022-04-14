@@ -41,16 +41,6 @@ function ItemMain() {
     <>
       <ItemList itemList={itemList} />
       <div className="form">
-        <label className="title" htmlFor="product-name">
-          제품명
-        </label>
-        <input
-          type="text"
-          name="itemName"
-          id="product-name"
-          value={itemName}
-          onChange={onChange}
-        />
         <label className="title" htmlFor="product-id">
           제품아이디
         </label>
@@ -59,6 +49,16 @@ function ItemMain() {
           name="id"
           id="product-id"
           value={id}
+          onChange={onChange}
+        />
+        <label className="title" htmlFor="product-name">
+          제품명
+        </label>
+        <input
+          type="text"
+          name="itemName"
+          id="product-name"
+          value={itemName}
           onChange={onChange}
         />
         <label className="title" htmlFor="product-price">
