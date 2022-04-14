@@ -14,7 +14,7 @@ interface IitemInput {
   itemName: string;
 }
 
-function ItemCreate() {
+function ItemMain() {
   const [itemList, setItemList] = useRecoilState(itemListState);
   const [input, setInput] = useState<IitemInput>({
     itemName: "",
@@ -78,4 +78,4 @@ function ItemCreate() {
     </>
   );
 }
-export default ItemCreate;
+export default ItemMain;
